@@ -1,17 +1,12 @@
-
 const express = require("express");
-const { exec } = require("child_process");
+const path = require("path");
 
 const app = express();
-const PORT = 3000;
 
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
-app.listen(PORT, () => {
-    const url = `http://localhost:${PORT}`;
-    console.log(`Server running on ${url}`);
-
-    // ✅ Windows-only: opens default browser
-    exec(`start ${url}`);
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
 });
-//>>>>>>> 44d0fde0398db6637a5530404dd6ce18d002cf7b
+
+module.exports = app;

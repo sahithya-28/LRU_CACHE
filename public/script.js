@@ -1,7 +1,6 @@
 let cache = [];
 let capacity = 0;
 
-// ---------- Render Cache ----------
 function renderCache(hitIndex = -1) {
     const container = document.getElementById("cache");
     container.innerHTML = "";
@@ -18,7 +17,6 @@ function renderCache(hitIndex = -1) {
     });
 }
 
-// ---------- PUT ----------
 function put() {
     if (capacity === 0) {
         capacity = parseInt(document.getElementById("capacity").value);
@@ -52,7 +50,6 @@ function put() {
     renderCache(0);
 }
 
-// ---------- GET ----------
 function get() {
     let key = document.getElementById("key").value.trim();
     let index = cache.findIndex(item => item.key === key);
@@ -68,8 +65,6 @@ function get() {
     showMessage(`GET (${key}) → HIT (${item.value})`);
 }
 
-// ---------- Message ----------
 function showMessage(msg) {
     document.getElementById("message").innerText = msg;
 }
-// >>>>>>> 44d0fde0398db6637a5530404dd6ce18d002cf7b
