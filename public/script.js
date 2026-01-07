@@ -72,3 +72,4 @@ function get() {
 function showMessage(msg) {
     document.getElementById("message").innerText = msg;
 }
+// >>>>>>> 44d0fde0398db6637a5530404dd6ce18d002cf7b
